@@ -133,4 +133,22 @@ class TicTacToeShould {
         assertEquals("Y", winner)
     }
 
+    @Test
+    fun `no player wins when there is no 3 filled on any direction`() {
+        val ticTacToe = TicTacToe()
+        ticTacToe.play(0, 0)
+        ticTacToe.play(0, 1)
+        ticTacToe.play(0, 2)
+        ticTacToe.play(1, 1)
+        ticTacToe.play(1, 0)
+        ticTacToe.play(1, 2)
+        ticTacToe.play(2, 1)
+        ticTacToe.play(2, 0)
+        ticTacToe.play(2, 2)
+
+        val winner = ticTacToe.winner()
+
+        assertEquals("", winner)
+    }
+
 }
