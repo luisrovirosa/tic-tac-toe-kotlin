@@ -43,4 +43,22 @@ class TicTacToeShould {
 
         assertEquals("Y", winner)
     }
+
+
+    @ParameterizedTest
+    @ValueSource(ints = [0])
+    fun `a X player wins when 3 fields of a column are taken by the same player`(row: Int) {
+        val ticTacToe = TicTacToe()
+        ticTacToe.play(0, row)
+        ticTacToe.play(0, (row + 1) % 3)
+        ticTacToe.play(1, row)
+        ticTacToe.play(0, (row + 2) % 3)
+        ticTacToe.play(2, row)
+
+        val winner = ticTacToe.winner()
+
+        assertEquals("X", winner)
+    }
+
+
 }
