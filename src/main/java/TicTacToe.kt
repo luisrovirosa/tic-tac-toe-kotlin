@@ -8,7 +8,7 @@ class TicTacToe {
     private var currentPlayer = "X"
 
     fun winner(): String {
-        if (hasWonPlayerX()){
+        if (hasWonPlayerX("X")){
             return "X"
         }
         for (i in 0..2) {
@@ -29,19 +29,19 @@ class TicTacToe {
         return ""
     }
 
-    private fun hasWonPlayerX(): Boolean {
+    private fun hasWonPlayerX(player: String): Boolean {
         for (i in 0..2) {
-            if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
+            if (player == board[i][0] && player == board[i][1] && player == board[i][2]) {
                 return true
             }
-            if ("X" == board[0][i] && "X" == board[1][i] && "X" == board[2][i]) {
+            if (player == board[0][i] && player == board[1][i] && player == board[2][i]) {
                 return true
             }
         }
-        if ("X" == board[0][0] && "X" == board[1][1] && "X" == board[2][2]) {
+        if (player == board[0][0] && player == board[1][1] && player == board[2][2]) {
             return true
         }
-        if ("X" == board[2][0] && "X" == board[1][1] && "X" == board[0][2]) {
+        if (player == board[2][0] && player == board[1][1] && player == board[0][2]) {
             return true
         }
         return false
