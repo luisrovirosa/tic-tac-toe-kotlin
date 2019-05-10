@@ -24,12 +24,11 @@ class TicTacToe {
                 || hasFilledOneDiagonal(player)
     }
 
-    private fun hasFilledOneDiagonal(player: String): Boolean {
-        if (player == board[0][0] && player == board[1][1] && player == board[2][2]) {
-            return true
-        }
-        if (player == board[2][0] && player == board[1][1] && player == board[0][2]) {
-            return true
+    private fun hasFilledOneRow(player: String): Boolean {
+        for (i in 0..2) {
+            if (player == board[i][0] && player == board[i][1] && player == board[i][2]) {
+                return true
+            }
         }
         return false
     }
@@ -43,11 +42,12 @@ class TicTacToe {
         return false
     }
 
-    private fun hasFilledOneRow(player: String): Boolean {
-        for (i in 0..2) {
-            if (player == board[i][0] && player == board[i][1] && player == board[i][2]) {
-                return true
-            }
+    private fun hasFilledOneDiagonal(player: String): Boolean {
+        if (player == board[0][0] && player == board[1][1] && player == board[2][2]) {
+            return true
+        }
+        if (player == board[2][0] && player == board[1][1] && player == board[0][2]) {
+            return true
         }
         return false
     }
