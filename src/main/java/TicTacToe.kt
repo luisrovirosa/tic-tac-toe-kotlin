@@ -19,10 +19,9 @@ class TicTacToe {
     }
 
     private fun hasWonPlayerX(player: String): Boolean {
-        if (hasFilledOneRow(player)) return true
-        if (hasFilledOneColumn(player)) return true
-        if (hasFilledOneDiagonal(player)) return true
-        return false
+        return hasFilledOneRow(player)
+                || hasFilledOneColumn(player)
+                || hasFilledOneDiagonal(player)
     }
 
     private fun hasFilledOneDiagonal(player: String): Boolean {
