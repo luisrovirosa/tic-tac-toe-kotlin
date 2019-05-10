@@ -16,10 +16,11 @@ class TicTacToe {
                 return "Y"
             }
         }
-        if ("X" == board[0][0] && "X" == board[1][0] && "X" == board[2][0]) {
-            return "X"
+        for (i in 0..2) {
+            if ("X" == board[0][i] && "X" == board[1][i] && "X" == board[2][i]) {
+                return "X"
+            }
         }
-
         return ""
     }
 
