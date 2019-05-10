@@ -1,3 +1,5 @@
+import java.lang.Exception
+
 class TicTacToe {
     private val firstPlayer = "X"
     private val secondPlayer = "O"
@@ -11,6 +13,9 @@ class TicTacToe {
     private var currentPlayer = firstPlayer
 
     fun play(x: Int, y: Int) {
+        if (board[x][y] != ""){
+            throw Exception("This field is already occupied")
+        }
         board[x][y] = currentPlayer
         currentPlayer = if (currentPlayer == firstPlayer) secondPlayer else firstPlayer
     }

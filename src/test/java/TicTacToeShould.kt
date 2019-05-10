@@ -1,4 +1,5 @@
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.ValueSource
 import kotlin.test.assertEquals
@@ -151,4 +152,14 @@ class TicTacToeShould {
         assertEquals("", winner)
     }
 
-}
+    @Test
+    fun `a taken field cannot be taken again`() {
+        val ticTacToe = TicTacToe()
+        ticTacToe.play(0, 0)
+
+        assertThrows<Exception> {
+            ticTacToe.play(0, 0)
+        }
+    }
+
+    }
