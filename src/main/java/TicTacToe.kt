@@ -7,6 +7,11 @@ class TicTacToe {
 
     private var currentPlayer = "X"
 
+    fun play(x: Int, y: Int) {
+        board[x][y] = currentPlayer
+        currentPlayer = if (currentPlayer == "X") "Y" else "X"
+    }
+
     fun winner(): String {
         if (hasWonPlayer("X")) {
             return "X"
@@ -50,11 +55,6 @@ class TicTacToe {
             return true
         }
         return false
-    }
-
-    fun play(x: Int, y: Int) {
-        board[x][y] = currentPlayer
-        currentPlayer = if (currentPlayer == "X") "Y" else "X"
     }
 
 }
