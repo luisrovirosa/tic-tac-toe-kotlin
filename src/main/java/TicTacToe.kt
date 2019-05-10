@@ -1,17 +1,17 @@
 class TicTacToe {
     var board = arrayOf(
-        arrayOf("","",""),
-        arrayOf("","",""),
-        arrayOf("","","")
+        arrayOf("", "", ""),
+        arrayOf("", "", ""),
+        arrayOf("", "", "")
     )
 
     private var currentPlayer = "X"
 
     fun winner(): String {
-        if (hasWonPlayerX("X")){
+        if (hasWonPlayerX("X")) {
             return "X"
         }
-        if (hasWonPlayerX("Y")){
+        if (hasWonPlayerX("Y")) {
             return "Y"
         }
 
@@ -21,6 +21,11 @@ class TicTacToe {
     private fun hasWonPlayerX(player: String): Boolean {
         if (hasFilledOneRow(player)) return true
         if (hasFilledOneColumn(player)) return true
+        if (hasFilledOneDiagonal(player)) return true
+        return false
+    }
+
+    private fun hasFilledOneDiagonal(player: String): Boolean {
         if (player == board[0][0] && player == board[1][1] && player == board[2][2]) {
             return true
         }
