@@ -30,22 +30,21 @@ class TicTacToe {
     }
 
     private fun hasWonPlayerX(): Boolean {
-        var xHasWon = false
         for (i in 0..2) {
             if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
-                xHasWon = true
+                return true
             }
             if ("X" == board[0][i] && "X" == board[1][i] && "X" == board[2][i]) {
-                xHasWon = true
+                return true
             }
         }
         if ("X" == board[0][0] && "X" == board[1][1] && "X" == board[2][2]) {
-            xHasWon = true
+            return true
         }
         if ("X" == board[2][0] && "X" == board[1][1] && "X" == board[0][2]) {
-            xHasWon = true
+            return true
         }
-        return xHasWon
+        return false
     }
 
     fun play(x: Int, y: Int) {
