@@ -8,17 +8,17 @@ class TicTacToe {
     private var currentPlayer = "X"
 
     fun winner(): String {
-        if (hasWonPlayerX("X")) {
+        if (hasWonPlayer("X")) {
             return "X"
         }
-        if (hasWonPlayerX("Y")) {
+        if (hasWonPlayer("Y")) {
             return "Y"
         }
 
         return ""
     }
 
-    private fun hasWonPlayerX(player: String): Boolean {
+    private fun hasWonPlayer(player: String): Boolean {
         return hasFilledOneRow(player)
                 || hasFilledOneColumn(player)
                 || hasFilledOneDiagonal(player)
