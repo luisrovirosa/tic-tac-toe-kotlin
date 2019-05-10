@@ -13,7 +13,7 @@ class TicTacToe {
     private var currentPlayer = firstPlayer
 
     fun play(x: Int, y: Int) {
-        if (board[x][y] != ""){
+        if (board[x][y] != "") {
             throw Exception("This field is already occupied")
         }
         board[x][y] = currentPlayer
