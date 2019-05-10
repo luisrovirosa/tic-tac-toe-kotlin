@@ -8,18 +8,22 @@ class TicTacToe {
     private var currentPlayer = "X"
 
     fun winner(): String {
+        var xHasWon = false
         for (i in 0..2){
             if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
-                return "X"
+                xHasWon = true
             }
             if ("X" == board[0][i] && "X" == board[1][i] && "X" == board[2][i]) {
-                return "X"
+                xHasWon = true
             }
         }
         if ("X" == board[0][0] && "X" == board[1][1] && "X" == board[2][2]) {
-            return "X"
+            xHasWon = true
         }
         if ("X" == board[2][0] && "X" == board[1][1] && "X" == board[0][2]) {
+            xHasWon = true
+        }
+        if (xHasWon){
             return "X"
         }
         for (i in 0..2) {
