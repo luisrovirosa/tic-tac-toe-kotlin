@@ -9,15 +9,15 @@ class TicTacToe {
 
     fun play(x: Int, y: Int) {
         board[x][y] = currentPlayer
-        currentPlayer = if (currentPlayer == "X") "Y" else "X"
+        currentPlayer = if (currentPlayer == "X") "O" else "X"
     }
 
     fun winner(): String {
         if (hasWonPlayer("X")) {
             return "X"
         }
-        if (hasWonPlayer("Y")) {
-            return "Y"
+        if (hasWonPlayer("O")) {
+            return "O"
         }
 
         return ""

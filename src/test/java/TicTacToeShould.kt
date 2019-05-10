@@ -30,7 +30,7 @@ class TicTacToeShould {
 
     @ParameterizedTest
     @ValueSource(ints = [0, 1, 2])
-    fun `a Y player wins when 3 fields of a row are taken by the same player`(row: Int) {
+    fun `a O player wins when 3 fields of a row are taken by the same player`(row: Int) {
         val ticTacToe = TicTacToe()
         ticTacToe.play((row + 1) % 3, 0)
         ticTacToe.play(row, 0)
@@ -41,7 +41,7 @@ class TicTacToeShould {
 
         val winner = ticTacToe.winner()
 
-        assertEquals("Y", winner)
+        assertEquals("O", winner)
     }
 
     @ParameterizedTest
@@ -61,7 +61,7 @@ class TicTacToeShould {
 
     @ParameterizedTest
     @ValueSource(ints = [0, 1, 2])
-    fun `a Y player wins when 3 fields of a column are taken by the same player`(row: Int) {
+    fun `a O player wins when 3 fields of a column are taken by the same player`(row: Int) {
         val ticTacToe = TicTacToe()
         ticTacToe.play(0, (row + 1) % 3)
         ticTacToe.play(0, row)
@@ -72,7 +72,7 @@ class TicTacToeShould {
 
         val winner = ticTacToe.winner()
 
-        assertEquals("Y", winner)
+        assertEquals("O", winner)
     }
 
     @Test
@@ -104,7 +104,7 @@ class TicTacToeShould {
     }
 
     @Test
-    fun `a Y player wins when left to right diagonal is taken by the Y player`() {
+    fun `a O player wins when left to right diagonal is taken by the O player`() {
         val ticTacToe = TicTacToe()
         ticTacToe.play(1, 0)
         ticTacToe.play(0, 0)
@@ -115,11 +115,11 @@ class TicTacToeShould {
 
         val winner = ticTacToe.winner()
 
-        assertEquals("Y", winner)
+        assertEquals("O", winner)
     }
 
     @Test
-    fun `a Y player wins when right to left diagonal is taken by the Y player`() {
+    fun `a O player wins when right to left diagonal is taken by the O player`() {
         val ticTacToe = TicTacToe()
         ticTacToe.play(2, 2)
         ticTacToe.play(0, 2)
@@ -130,7 +130,7 @@ class TicTacToeShould {
 
         val winner = ticTacToe.winner()
 
-        assertEquals("Y", winner)
+        assertEquals("O", winner)
     }
 
     @Test
