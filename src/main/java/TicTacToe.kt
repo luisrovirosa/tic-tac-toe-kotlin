@@ -6,7 +6,11 @@ class TicTacToe {
     )
 
     fun winner(): String {
-        return if ("X" == board[0][0] && "X" == board[0][1] && "X" == board[0][2]) "X" else ""
+        if ("X" == board[0][0] && "X" == board[0][1] && "X" == board[0][2]) {
+            return "X"
+        } else {
+            return ""
+        }
     }
 
     fun play(x: Int, y: Int) {
