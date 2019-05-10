@@ -6,13 +6,16 @@ class TicTacToe {
     )
 
     fun winner(): String {
-        if ("X" == board[0][0] && "X" == board[0][1] && "X" == board[0][2]) {
+        var i = 0
+        if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
             return "X"
         }
-        if ("X" == board[1][0] && "X" == board[1][1] && "X" == board[1][2]) {
+        i++
+        if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
             return "X"
         }
-        if ("X" == board[2][0] && "X" == board[2][1] && "X" == board[2][2]) {
+        i++
+        if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
             return "X"
         }
 
