@@ -8,9 +8,12 @@ class TicTacToe {
     fun winner(): String {
         if ("X" == board[0][0] && "X" == board[0][1] && "X" == board[0][2]) {
             return "X"
-        } else {
-            return ""
         }
+        if ("X" == board[1][0] && "X" == board[1][1] && "X" == board[1][2]) {
+            return "X"
+        }
+
+        return ""
     }
 
     fun play(x: Int, y: Int) {
