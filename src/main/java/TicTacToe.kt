@@ -23,6 +23,8 @@ class TicTacToe {
             if (player == board[i][0] && player == board[i][1] && player == board[i][2]) {
                 return true
             }
+        }
+        for (i in 0..2) {
             if (player == board[0][i] && player == board[1][i] && player == board[2][i]) {
                 return true
             }
