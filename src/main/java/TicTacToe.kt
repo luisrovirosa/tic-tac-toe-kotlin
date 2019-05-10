@@ -8,8 +8,7 @@ class TicTacToe {
     private var currentPlayer = "X"
 
     fun winner(): String {
-        var xHasWon = hasWonPlayerX()
-        if (xHasWon){
+        if (hasWonPlayerX()){
             return "X"
         }
         for (i in 0..2) {
