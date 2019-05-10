@@ -74,4 +74,19 @@ class TicTacToeShould {
 
         assertEquals("Y", winner)
     }
+
+    @Test
+    fun `a X player wins when left to right diagonal is taken by the X player`() {
+        val ticTacToe = TicTacToe()
+        ticTacToe.play(0, 0)
+        ticTacToe.play(0, 1)
+        ticTacToe.play(1, 1)
+        ticTacToe.play(0, 2)
+        ticTacToe.play(2, 2)
+
+        val winner = ticTacToe.winner()
+
+        assertEquals("X", winner)
+    }
+
 }
