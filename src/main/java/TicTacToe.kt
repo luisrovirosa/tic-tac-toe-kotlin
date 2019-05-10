@@ -33,6 +33,9 @@ class TicTacToe {
         if ("Y" == board[0][0] && "Y" == board[1][1] && "Y" == board[2][2]) {
             return "Y"
         }
+        if ("Y" == board[2][0] && "Y" == board[1][1] && "Y" == board[0][2]) {
+            return "Y"
+        }
 
         return ""
     }
