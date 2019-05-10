@@ -1,23 +1,26 @@
 class TicTacToe {
+    private val firstPlayer = "X"
+    private val secondPlayer = "O"
+
     var board = arrayOf(
         arrayOf("", "", ""),
         arrayOf("", "", ""),
         arrayOf("", "", "")
     )
 
-    private var currentPlayer = "X"
+    private var currentPlayer = firstPlayer
 
     fun play(x: Int, y: Int) {
         board[x][y] = currentPlayer
-        currentPlayer = if (currentPlayer == "X") "O" else "X"
+        currentPlayer = if (currentPlayer == firstPlayer) secondPlayer else firstPlayer
     }
 
     fun winner(): String {
-        if (hasWonPlayer("X")) {
-            return "X"
+        if (hasWonPlayer(firstPlayer)) {
+            return firstPlayer
         }
-        if (hasWonPlayer("O")) {
-            return "O"
+        if (hasWonPlayer(secondPlayer)) {
+            return secondPlayer
         }
 
         return ""
