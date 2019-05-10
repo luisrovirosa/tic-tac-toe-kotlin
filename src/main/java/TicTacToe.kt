@@ -8,21 +8,7 @@ class TicTacToe {
     private var currentPlayer = "X"
 
     fun winner(): String {
-        var xHasWon = false
-        for (i in 0..2){
-            if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
-                xHasWon = true
-            }
-            if ("X" == board[0][i] && "X" == board[1][i] && "X" == board[2][i]) {
-                xHasWon = true
-            }
-        }
-        if ("X" == board[0][0] && "X" == board[1][1] && "X" == board[2][2]) {
-            xHasWon = true
-        }
-        if ("X" == board[2][0] && "X" == board[1][1] && "X" == board[0][2]) {
-            xHasWon = true
-        }
+        var xHasWon = hasWonPlayerX()
         if (xHasWon){
             return "X"
         }
@@ -42,6 +28,25 @@ class TicTacToe {
         }
 
         return ""
+    }
+
+    private fun hasWonPlayerX(): Boolean {
+        var xHasWon = false
+        for (i in 0..2) {
+            if ("X" == board[i][0] && "X" == board[i][1] && "X" == board[i][2]) {
+                xHasWon = true
+            }
+            if ("X" == board[0][i] && "X" == board[1][i] && "X" == board[2][i]) {
+                xHasWon = true
+            }
+        }
+        if ("X" == board[0][0] && "X" == board[1][1] && "X" == board[2][2]) {
+            xHasWon = true
+        }
+        if ("X" == board[2][0] && "X" == board[1][1] && "X" == board[0][2]) {
+            xHasWon = true
+        }
+        return xHasWon
     }
 
     fun play(x: Int, y: Int) {
